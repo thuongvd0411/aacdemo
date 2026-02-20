@@ -359,8 +359,18 @@ def main():
             <button class="tab-btn active" data-filter="all">Tất cả</button>
     """
 
+    FOLDER_MAPPING = {
+        "1_nhu_cau_sinh_hoat": "1 Nhu cầu sinh hoạt",
+        "2_hanh_dong": "2 Hành động",
+        "3_nguoi_quen_thuoc": "3 Người quen thuộc",
+        "4_do_vat_do_choi": "4 Đồ vật Đồ chơi",
+        "5_cam_xuc": "5 Cảm xúc",
+        "6_tu_chuc_nang": "6 Từ chức năng",
+    }
+
     for d in dirs:
-        tabs_html += f'            <button class="tab-btn" data-filter="{d}">{d}</button>\n'
+        display_d = FOLDER_MAPPING.get(d, d)
+        tabs_html += f'            <button class="tab-btn" data-filter="{d}">{display_d}</button>\n'
     
     tabs_html += """
         </div>
